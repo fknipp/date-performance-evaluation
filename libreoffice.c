@@ -1,3 +1,7 @@
+// Source https://github.com/LibreOffice/core/blob/master/tools/source/datetime/tdate.cxx
+// Function: Date::DateToDays
+// License: GPL Version 3
+
 static const int aDaysInMonth[12] = {31, 28, 31, 30, 31, 30,
                                      31, 31, 30, 31, 30, 31};
 

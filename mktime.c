@@ -1,3 +1,5 @@
+// Source: https://github.com/lattera/glibc/blob/master/time/mktime.c
+// License: GPL Version 2
 
 typedef long int long_int;
 
