@@ -2,3 +2,4 @@
 *.s
 main
 gmon.out
+profiling*
