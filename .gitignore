@@ -1,5 +1,6 @@
 *.o
 *.s
 main
+cmp2mktime
 gmon.out
 profiling*

@@ -1,11 +1,22 @@
 MAIN = main
-OBJ = main.o google_v8.o knipp.o libreoffice.o mktime.o
+MAINOBJ = main.o google_v8.o knipp.o libreoffice.o mktime.o
+GCC = gcc
 
-main: $(OBJ)
-	gcc -pg -o $(MAIN) $(OBJ)
+main: $(MAINOBJ)
+	$(GCC) -o $(MAIN) $(MAINOBJ)
+
+cmp2mktime: mktime_offset.c cmp2mktime.c
+	gcc mktime_offset.c cmp2mktime.c -o cmp2mktime
+
+$(MAIN).o: $(MAIN).c
+	$(GCC) -c $<
 
 %.o: %.c
-	gcc -pg -c -O3 $<
+	$(GCC) -c -O3 $<
 
 clean:
-	rm $(OBJ) $(MAIN)
+	rm $(MAINOBJ) $(MAIN)
+
+objdump: $(MAINOBJ)
+	objdump -h --section=.text --section=.rodata $(MAINOBJ)
+
